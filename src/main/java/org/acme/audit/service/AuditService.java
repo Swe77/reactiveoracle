@@ -19,7 +19,7 @@ public class AuditService {
 	
 	@ConsumeEvent("AUDIT_BUS")
 	@ReactiveTransactional
-	public Uni<Void> gravarTrilha(Audit audit) {
+	public Uni<Void> saveTrail(Audit audit) {
 		log.info("### [TRAIL RECORDING] COUNTER: " + counter.incrementAndGet());
 		return Audit.persist(audit);				
 	}
